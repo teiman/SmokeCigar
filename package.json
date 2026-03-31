@@ -1,0 +1,14 @@
+{
+  "name": "smokecigar",
+  "version": "1.0.0",
+  "description": "Quake 1 MDL Vertex Tracker",
+  "scripts": {
+    "start": "serve .",
+    "dist": "node scripts/dist.js",
+    "deploy": "npm run dist && scp -r dist/* zerror@zerror.com:/home/zerror/www/smokecigar/ && ssh zerror@zerror.com \"chmod -R 755 /home/zerror/www/smokecigar/\""
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "serve": "^14.2.0"
+  }
+}

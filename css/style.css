@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Consolas, monospace;
+  background: #111;
+  color: #ccc;
+  min-height: 100vh;
+}
+
+/* --- Drop zone --- */
+
+#drop-zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  border: 3px dashed #444;
+  margin: 16px;
+  border-radius: 12px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+#drop-zone.drag-over {
+  border-color: #ff3333;
+  background: rgba(255, 51, 51, 0.05);
+}
+
+#drop-zone p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* --- Error --- */
+
+#error-msg {
+  display: none;
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #c0392b;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  z-index: 100;
+}
+
+/* --- App content --- */
+
+#app-content {
+  display: none;
+  padding: 12px;
+}
+
+/* --- Canvas panels --- */
+
+.panels {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.panels canvas {
+  flex: 1;
+  height: 320px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  cursor: crosshair;
+}
+
+/* --- Controls --- */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 10px;
+  background: #1a1a1a;
+  border-radius: 4px;
+  border: 1px solid #333;
+}
+
+.controls label {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.controls input[type="range"] {
+  width: 200px;
+  accent-color: #ff3333;
+}
+
+.controls input[type="number"] {
+  width: 64px;
+  background: #222;
+  border: 1px solid #444;
+  color: #ccc;
+  padding: 4px 6px;
+  border-radius: 3px;
+  font-family: inherit;
+}
+
+#frame-label {
+  font-size: 0.85rem;
+  color: #aaa;
+  min-width: 180px;
+}
+
+#vertex-info {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-left: auto;
+}
+
+/* --- Template & Output --- */
+
+.code-section {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.code-section .column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.code-section h3 {
+  font-size: 0.85rem;
+  color: #888;
+  font-weight: normal;
+}
+
+.code-section textarea {
+  width: 100%;
+  height: 200px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #ccc;
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 0.85rem;
+  padding: 10px;
+  resize: vertical;
+}
+
+/* --- Buttons --- */
+
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  background: #333;
+  border: 1px solid #555;
+  color: #ccc;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  transition: background 0.15s;
+}
+
+button:hover {
+  background: #444;
+}
+
+button.primary {
+  background: #c0392b;
+  border-color: #e74c3c;
+  color: #fff;
+}
+
+button.primary:hover {
+  background: #e74c3c;
+}
